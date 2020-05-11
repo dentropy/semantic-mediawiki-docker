@@ -26,7 +26,6 @@ RUN apt-get install -y \
 
 COPY ./composer.sh  /root/composer.sh
 RUN /root/composer.sh
-
 RUN rm /var/www/html/index.html
 RUN curl https://releases.wikimedia.org/mediawiki/1.31/mediawiki-1.31.7.tar.gz -o /root/mediawiki.tar.gz
 RUN tar -xvf /root/mediawiki.tar.gz
@@ -38,14 +37,14 @@ RUN rm -r /mediawiki-1.31.7
 
 RUN echo "ServerName test.local" >> /etc/apache2/apache2.conf
 
+RUN cp /composer.phar /usr/local/bin/composer
 #RUN mv /var/www/html/composer.json /var/www/html/mediawiki.composer.json 
 COPY semantic-compoer.sh /root/semantic-compoer.sh
-RUN cd /var/www/html && php /composer.phar install
+#RUN cd /var/www/html && composer update --prefer-source
 RUN bash /root/semantic-compoer.sh
 
 EXPOSE 80
 EXPOSE 443
-
 COPY ./startup.sh /root/startup.sh
 RUN chmod 777 /root/startup.sh
 CMD /root/startup.sh

@@ -10,6 +10,6 @@
 
 ## Database Settings
 
-domain name : database
-username    : wikiuser
-password    : example
+domain name : database \
+username    : wikiuser \
+password    : example  \
