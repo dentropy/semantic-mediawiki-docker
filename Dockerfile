@@ -38,20 +38,14 @@ RUN rm -r /mediawiki-1.31.7
 
 RUN echo "ServerName test.local" >> /etc/apache2/apache2.conf
 
+#RUN mv /var/www/html/composer.json /var/www/html/mediawiki.composer.json 
+COPY semantic-compoer.sh /root/semantic-compoer.sh
+RUN cd /var/www/html && php /composer.phar install
+RUN bash /root/semantic-compoer.sh
+
 EXPOSE 80
 EXPOSE 443
 
 COPY ./startup.sh /root/startup.sh
 RUN chmod 777 /root/startup.sh
 CMD /root/startup.sh
-#CMD ["apachectl", "-k", "restart"] 
-#RUN source /root/.bashrc 
-#CMD /bin/bash -c apachectl -f /etc/apache2/apache2.conf 
-#CMD ["/bin/bash", "-c", "source", "/root/.bashrc", "&&", "/etc/init.d/apache2", "start"]
-#CMD /etc/init.d/apache2 start
-#CMD ["/etc/init.d/apache2", "start", "&&", "/bin/bash", "-c", "while true; do sleep 1000; done"]
-#CMD ["/bin/bash", "-c", "while true; do sleep 1000; done"]
-#CMD ["/etc/init.d/apache2", "start", "&&", "while true; do sleep 1000; done"]
-#CMD ["/bin/bash", "-c", "source /root/.bashrc", "&&", "apachectl", "-f", "/etc/apache2/apache2.conf"] 
-##"-f", "/etc/apache2/apache2.conf", "start"]
-#CMD ["/etc/init.d/apache2 start & /bin/bash -c while true; do sleep 1000; done"]
