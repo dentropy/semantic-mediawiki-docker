@@ -21,7 +21,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 $wgSitename = "testwiki";
 $wgMetaNamespace = "Testwiki";
-
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
 ## For more information on customizing the URLs
@@ -132,6 +131,7 @@ wfLoadSkin( 'Vector' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
+$wgShowExceptionDetails = True;
 $domainName = getenv("domainName");
 enableSemantics($domainName);
 

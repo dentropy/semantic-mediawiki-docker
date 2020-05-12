@@ -12,7 +12,7 @@ RUN apt-get install -y \
     wget \
     nano
 
-COPY ./timezone.sh /root/timezone.sh
+COPY ./root-dir/timezone.sh /root/timezone.sh
 RUN bash /root/timezone.sh
 
 RUN apt-get install -y \
@@ -24,7 +24,7 @@ RUN apt-get install -y \
 	php7.2-mysql \
     libapache2-mod-php7.2
 
-COPY ./composer.sh  /root/composer.sh
+COPY ./root-dir/composer.sh  /root/composer.sh
 RUN /root/composer.sh
 RUN rm /var/www/html/index.html
 RUN curl https://releases.wikimedia.org/mediawiki/1.31/mediawiki-1.31.7.tar.gz -o /root/mediawiki.tar.gz
@@ -39,12 +39,14 @@ RUN echo "ServerName test.local" >> /etc/apache2/apache2.conf
 
 RUN cp /composer.phar /usr/local/bin/composer
 #RUN mv /var/www/html/composer.json /var/www/html/mediawiki.composer.json 
-COPY semantic-compoer.sh /root/semantic-compoer.sh
+COPY ./root-dir/semantic-compoer.sh /root/semantic-compoer.sh
 #RUN cd /var/www/html && composer update --prefer-source
 RUN bash /root/semantic-compoer.sh
 
 EXPOSE 80
 EXPOSE 443
-COPY ./startup.sh /root/startup.sh
+COPY ./root-dir/startup.sh /root/startup.sh
 RUN chmod 777 /root/startup.sh
+#COPY ./root-dir/LocalSettings.php /var/www/html/LocalSettings.php
+COPY ./root-dir/update.sh /root/update.sh
 CMD /root/startup.sh
