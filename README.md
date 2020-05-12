@@ -21,7 +21,7 @@ bash copy.sh
 bash update.sh
 ```
 
-## Links that helps with the creation of this docker container
+## Links that helped with the creation of this docker container
 
 <https://stackoverflow.com/questions/44331836/apt-get-install-tzdata-noninteractive>
 
