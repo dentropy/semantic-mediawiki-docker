@@ -7,7 +7,7 @@
 # The following extensions were automatically enabled:
 wfLoadExtension( 'CategoryTree' );
 wfLoadExtension( 'Cite' );
-#wfLoadExtension( 'CodeEditor' );
+wfLoadExtension( 'CodeEditor' );
 wfLoadExtension( 'ImageMap' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'OATHAuth' );

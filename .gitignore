@@ -1,4 +1,3 @@
-# Ignore php files
 LocalSettings.php
 *.tar
 *.sql
