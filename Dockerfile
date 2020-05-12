@@ -43,6 +43,20 @@ COPY ./root-dir/semantic-compoer.sh /root/semantic-compoer.sh
 #RUN cd /var/www/html && composer update --prefer-source
 RUN bash /root/semantic-compoer.sh
 
+# Good artists copy; great artists steal - wirehead/semantic-mediawiki-docker
+# Download the non-Composer-based extensions
+RUN curl -o /tmp/JsonConfig-REL1_34-f877d87.tar.gz https://extdist.wmflabs.org/dist/extensions/JsonConfig-REL1_34-f877d87.tar.gz \
+  && tar -xzf /tmp/JsonConfig-REL1_34-f877d87.tar.gz -C /var/www/html/extensions \
+  && curl -o /tmp/Graph-REL1_34-eb3412d.tar.gz https://extdist.wmflabs.org/dist/extensions/Graph-REL1_34-eb3412d.tar.gz \
+  && tar -xzf /tmp/Graph-REL1_34-eb3412d.tar.gz -C /var/www/html/extensions \
+  && curl -o /tmp/SubPageList3-REL1_34-3f1045e.tar.gz https://extdist.wmflabs.org/dist/extensions/SubPageList3-REL1_34-3f1045e.tar.gz \
+  && tar -xzf /tmp/SubPageList3-REL1_34-3f1045e.tar.gz -C /var/www/html/extensions \
+  && curl -o /tmp/MsUpload-REL1_34-f70d1c8.tar.gz https://extdist.wmflabs.org/dist/extensions/MsUpload-REL1_34-f70d1c8.tar.gz \
+  && tar -xzf /tmp/MsUpload-REL1_34-f70d1c8.tar.gz -C /var/www/html/extensions \
+  && curl -o /tmp/TemplateStyles-REL1_34-c4d6f25.tar.gz https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_34-c4d6f25.tar.gz \
+  && tar -xzf /tmp/TemplateStyles-REL1_34-c4d6f25.tar.gz -C /var/www/html/extensions \
+  && rm /tmp/*.tar.gz
+
 EXPOSE 80
 EXPOSE 443
 COPY ./root-dir/startup.sh /root/startup.sh
