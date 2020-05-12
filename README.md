@@ -11,6 +11,7 @@ password    : example
 ## Instructions
 
 ``` bash
+bash build.sh
 docker-compose up
 # navigate into localhost:8080
 # Follow instructions and download LocalSettings.php
