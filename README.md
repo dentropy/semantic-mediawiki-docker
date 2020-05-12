@@ -6,7 +6,7 @@ I just want a semantic mediawiki deployment that is easy to backup and restore.
 
 domain name : database \
 username    : wikiuser \
-password    : example  \
+password    : example
 
 ## Instructions
 
@@ -17,6 +17,7 @@ docker-compose up
 # Add LocalSettings.php to this folder
 # add "enableSemantics( 'testwiki.local' );" to end of LocalSettings.php
 bash copy.sh
+bash update.sh
 ```
 
 ## Links that helps with the creation of this docker container
