@@ -30,3 +30,7 @@ bash update.sh
 <https://askubuntu.com/questions/256013/apache-error-could-not-reliably-determine-the-servers-fully-qualified-domain-n#256018>
 
 <https://silvae86.github.io/2018/10/28/how-to-install-semantic-mediawiki/>
+
+<https://github.com/wirehead/semantic-mediawiki-docker>
+
+<https://github.com/ProfessionalWiki/SemanticBundle>
