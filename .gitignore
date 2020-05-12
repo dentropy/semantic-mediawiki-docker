@@ -1,2 +1,4 @@
 # Ignore php files
 *.php
+*.tar
+*.sql

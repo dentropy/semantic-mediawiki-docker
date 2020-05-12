@@ -14,7 +14,7 @@ services:
       - database
     volumes:
       - mediawiki:/var/www/html/images
-    #  - ./LocalSettings.php:/var/www/html/LocalSettings.php
+    #  - ./LocalSettings.php:wik/var/www/html/LocalSettings.php
     environment:
       wgServer: http://testwiki:8080
       wgSecretKey: 5fcb0b0d254322d84d2c38f81bd6b1bcacbce59436e0c370d02e0695320a2eee
