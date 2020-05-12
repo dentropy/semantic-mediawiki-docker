@@ -1,1 +1,2 @@
-LocalSettings.php
+# Ignore php files
+*.php
