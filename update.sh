@@ -1,3 +1,3 @@
 #!/bin/bash
-docker exec -it mytry_mediawiki_1 /root/update.sh
+docker exec -it semanticmediawikidocker_mediawiki_1 /root/update.sh
 
