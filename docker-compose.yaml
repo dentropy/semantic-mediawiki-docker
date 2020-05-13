@@ -6,7 +6,7 @@ volumes:
 
 services:
   mediawiki:
-    image: dentropy/semantic-mediawiki:latest
+    image: semantic-mediawiki:latest
     restart: always
     ports:
       - 8080:80

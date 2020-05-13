@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t dentropy/semantic-mediawiki .
+docker build -t semantic-mediawiki .
